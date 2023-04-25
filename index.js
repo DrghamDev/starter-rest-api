@@ -19,6 +19,12 @@ app.use(express.urlencoded({ extended: true }))
 // app.use(express.static('public', options))
 // #############################################################################
 
+app.get('/', (req, res) => {
+  return res.status(200).json({
+    message : "Welcom to my site",
+  })
+})
+
 // Create or Update an item
 app.post('/:col/:key', async (req, res) => {
   console.log(req.body)
